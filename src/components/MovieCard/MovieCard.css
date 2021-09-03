@@ -2,18 +2,19 @@
 .card-img{
     width: 300px;
     height: 350px;
+    cursor: pointer;
 }
 
 .card{
     margin: 20px;
     width: 300px;
     /* height: 430px; */
-    cursor: pointer;
 }
 
 .heart-icon{
     margin: 20px;
     font-size: 27px;
+    cursor: pointer;
 }
 
 .card-title{

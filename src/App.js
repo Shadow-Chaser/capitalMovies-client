@@ -1,8 +1,14 @@
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Home from './pages/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import MovieDetails from './components/MovieDetails/MovieDetails';
 export const MovieContext = createContext();
 const one = "https://api.themoviedb.org/3/movie/popular?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
 const two = "https://api.themoviedb.org/3/movie/now_playing?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
@@ -31,38 +37,29 @@ function App() {
   return (
     <MovieContext.Provider value={[movies, setMovies]}>
     <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
 
-        <Home />
+            <Route path='/movie/:id'>
+              <MovieDetails />
+            </Route>
 
+
+            <Route path='/login'>
+              {/* <Login /> */}
+            </Route>
+
+            <Route path='/register'>
+              {/* <Register /> */}
+            </Route>
+          </Switch>
+        </Router>
     </div>
     </MovieContext.Provider>
   );
 }
 
 export default App;
-
-
-
-
-
-// useEffect(() => {
-//   fetch("https://api.themoviedb.org/3/movie/popular?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1")
-//     .then(res => res.json())
-//     .then(data => {
-//       let newMovies = { ...movies };
-//       newMovies.popular = data.results;
-//       setMovies(newMovies);
-//     }
-//     )
-// }, [])
-
-// useEffect(() => {
-//   fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1")
-//     .then(res => res.json())
-//     .then(data => {
-//       let newMovies = { ...movies };
-//       newMovies.latest = data.results;
-//       setMovies(newMovies);
-//     }
-//     )
-// }, [])

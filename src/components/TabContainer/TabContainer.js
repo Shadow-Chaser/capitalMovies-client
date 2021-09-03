@@ -10,15 +10,15 @@ const TabContainer = () => {
     return (
         <Tabs isFitted variant="enclosed" colorScheme="green">
             <TabList>
-                <Tab>Discover</Tab>
+                {/* <Tab>Discover</Tab> */}
                 <Tab>Popular</Tab>
                 <Tab>Latest</Tab>
                 <Tab>Favorites</Tab>
             </TabList>
             <TabPanels>
-                <TabPanel>
+                {/* <TabPanel>
                     <DiscoverMovies />
-                </TabPanel>
+                </TabPanel> */}
                 <TabPanel>
                     <PopularMovies />
                 </TabPanel>
