@@ -10,6 +10,7 @@ import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Login from './pages/Authentication/Login/Login';
+import Register from './pages/Authentication/Register/Register';
 export const MovieContext = createContext();
 const one = "https://api.themoviedb.org/3/movie/popular?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
 const two = "https://api.themoviedb.org/3/movie/now_playing?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
@@ -48,14 +49,14 @@ function App() {
               <MovieDetails />
             </Route>
 
-
             <Route path='/login'>
               <Login />
             </Route>
 
             <Route path='/register'>
-              {/* <Register /> */}
+              <Register />
             </Route>
+
           </Switch>
         </Router>
     </div>

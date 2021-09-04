@@ -26,7 +26,7 @@ const MovieCard = (props) => {
             <div className="d-flex justify-content-between">
                 <div>
                     <h1 className="card-title"> {title} </h1>
-                    <Tooltip hasArrow label="User Scrore" bg="teal" color="white" placement="top">
+                    <Tooltip hasArrow label="User Score" bg="teal" color="white" placement="top">
                         <Badge variant="outline" colorScheme="green" style={{ margin: '0px 0px 10px 10px' }}> {vote_average * 10}% </Badge>
                     </Tooltip>
                 </div>
