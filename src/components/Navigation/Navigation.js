@@ -1,5 +1,6 @@
-import { Button, Link } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css'
 
 const Navigation = () => {
@@ -13,7 +14,9 @@ const Navigation = () => {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <Link to='/login'>
                         <Button colorScheme="teal" variant="solid"> Log In </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

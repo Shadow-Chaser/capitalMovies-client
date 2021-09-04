@@ -1,0 +1,11 @@
+.movieImage{
+    width: 100%;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.movieTitle{
+    font-size: 40px;
+    font-weight: 800;
+}
+
