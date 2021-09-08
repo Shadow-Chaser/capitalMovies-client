@@ -4,6 +4,7 @@ import axios from 'axios';
 import './MovieDetails.css'
 import { Tooltip } from '@chakra-ui/tooltip';
 import { Badge, Link } from '@chakra-ui/layout';
+import Navigation from '../Navigation/Navigation';
 const baseURL = "https://image.tmdb.org/t/p/w500"
 
 
@@ -22,6 +23,7 @@ const MovieDetails = () => {
     console.log("Data ", details);
     return (
         <div>
+            <Navigation />
             <img src={baseURL + backdrop_path} alt="" className='movieImage' />
             <div className="d-flex">
                 <h1 className='movieTitle ms-4 mt-4'>{title}</h1>
@@ -38,8 +40,8 @@ const MovieDetails = () => {
 
             <div className="ms-4 row">
                 <div className="col-md-9">
-                    <p>Release Date : {release_date} </p>
                     <p>{tagline}</p>
+                    <p>Release Date : {release_date} </p>
                     <p>Original Language: {original_language}</p>
                     <p>Original Title: {original_title}</p>
                     <p>Overview</p>

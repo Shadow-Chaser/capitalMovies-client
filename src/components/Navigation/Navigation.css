@@ -1,29 +1,18 @@
-
-
-.nav-link{
-    color: red;
+#brand{
+    margin-left: 15px;
 }
 
-#menu{
-    /* color: #CDCDCD; */
-    color: #232763;
-    margin-right: 10px;
-    font-size: 18px;
-    transition: all 0.5s ease;
-    font-weight: 700;
-
+.nav_item{
+    margin-left: 70px;
 }
 
-#menu:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgb(34, 219, 34);
+.nav_item__text{
+    text-decoration: none;
+    font-weight: 800;
 }
 
-#logMenu{
-    margin-right: 10px;
-    font-size: 18px;
-    transition: all 0.5s ease;
-    font-weight: 700;
-    color: white;
-    background-color: rgb(25, 206, 25);
+.nav_item__text:hover{
+    font-weight: 800;
+    border-bottom: 3px solid black;
+    
 }

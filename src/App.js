@@ -12,11 +12,13 @@ import MovieDetails from './components/MovieDetails/MovieDetails';
 import Login from './pages/Authentication/Login/Login';
 import Register from './pages/Authentication/Register/Register';
 export const MovieContext = createContext();
+export const UserContext = createContext();
 const one = "https://api.themoviedb.org/3/movie/popular?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
 const two = "https://api.themoviedb.org/3/movie/now_playing?api_key=81e0b3d9d2419efbd8f55d937ddca8e0&language=en-US&page=1"
 
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
   const [movies, setMovies] = useState({ popular: [], latest: [], favorites: [] })
 
   useEffect(() => {
@@ -37,6 +39,7 @@ function App() {
   // console.log(movies);
 
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <MovieContext.Provider value={[movies, setMovies]}>
     <div className="App">
         <Router>
@@ -61,6 +64,7 @@ function App() {
         </Router>
     </div>
     </MovieContext.Provider>
+    </UserContext.Provider>
   );
 }
 
