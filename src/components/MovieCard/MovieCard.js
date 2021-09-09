@@ -23,32 +23,42 @@ const MovieCard = (props) => {
         // console.log(id, " icon clicked", "category: ", props.category);
         // console.log(props.movie)
 
-        axios.post('http://localhost:5000/addToFavorites', {
-            email: loggedInUser.email,
-            movieDetail: props.movie
-        })
-            .then(res => {
-                console.log(res.data)
-                if (res.data) {
-                    toast({
-                        title: "Added to Favorites",
-                        status: "success",
-                        position: "top",
-                        isClosable: true,
-                    })
-                }
-                else {
-                    toast({
-                        title: "Already added to Favorites!",
-                        status: "warning",
-                        position: "top",
-                        isClosable: true,
-                    })
-                }
+        if (loggedInUser.email) {
+            axios.post('https://nameless-anchorage-84333.herokuapp.com/addToFavorites', {
+                email: loggedInUser.email,
+                movieDetail: props.movie
             })
-            .then(err => {
-                console.log(err)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data) {
+                        toast({
+                            title: "Added to Favorites",
+                            status: "success",
+                            position: "top",
+                            isClosable: true,
+                        })
+                    }
+                    else {
+                        toast({
+                            title: "Already added to Favorites!",
+                            status: "warning",
+                            position: "top",
+                            isClosable: true,
+                        })
+                    }
+                })
+                .then(err => {
+                    console.log(err)
+                })
+        }
+        else {
+            toast({
+                title: "Please Login to add to Favorites!",
+                status: "error",
+                position: "top",
+                isClosable: true,
             })
+        }
     }
 
     return (
@@ -64,9 +74,9 @@ const MovieCard = (props) => {
                     </Tooltip>
                 </div>
                 <Tooltip hasArrow label="Add to Favorites" bg="teal" color="white" placement="top">
-                    <h1 className="heart-icon" onClick={() => { addToFavorites(id) }} >❤</h1>
+                    {/* <h1 className="heart-icon" onClick={() => { addToFavorites(id) }} >❤</h1> */}
+                    <i class="bi bi-bookmark-heart-fill heart-icon" onClick={() => { addToFavorites(id) }} />
                 </Tooltip>
-                {/* <BsHeart className='heart-icon' /> */}
             </div>
         </div>
 

@@ -63,12 +63,12 @@ const Login = () => {
             <div className="col-md-6 shadow-sm rounded-3 border p-5 login_div">
                 <Heading className='mb-3' as="h1" size="xl" isTruncated> Enter Your Credential </Heading>
                 <FormControl id="email" isRequired>
-                        <FormLabel> Email</FormLabel>
+                        <FormLabel> <i class="bi bi-envelope-fill" /> Email</FormLabel>
                         <Input onChange={handleInput} name='email' size="lg" type="email" placeholder="Enter email address" />
                 </FormControl>
 
                 <FormControl id="password" isRequired>
-                    <FormLabel>Password</FormLabel>
+                        <FormLabel> <i class="bi bi-key-fill" /> Password</FormLabel>
                     <InputGroup size="lg">
                         <Input
                                 onChange={handleInput}

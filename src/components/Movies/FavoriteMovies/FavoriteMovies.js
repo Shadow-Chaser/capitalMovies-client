@@ -8,7 +8,7 @@ const FavoriteMovies = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
 
-    axios.get(`http://localhost:5000/favorites?email=${loggedInUser.email}`)
+    axios.get(`https://nameless-anchorage-84333.herokuapp.com/favorites?email=${loggedInUser.email}`)
         .then(res => {
             setFavMovies(res.data)
         })

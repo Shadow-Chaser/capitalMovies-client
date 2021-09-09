@@ -26,11 +26,11 @@ const MovieDetails = () => {
             <Navigation />
             <img src={baseURL + backdrop_path} alt="" className='movieImage' />
             <div className="d-flex">
-                <h1 className='movieTitle ms-4 mt-4'>{title}</h1>
+                <h1 className='movieTitle ms-4 mt-4'>{title} </h1>
                 <Tooltip hasArrow label="Go to Homepage" bg="teal" color="white" placement="top">
-                    <Link className="movieTitle ms-2 mt-4" target="_blank" href={homepage} >❤</Link>
+                    <Link className="movieTitle ms-2 mt-4" target="_blank" href={homepage} ><i class="bi bi-link-45deg" /></Link>
                 </Tooltip>
-                <p>Goto IMDB</p>
+                {/* <p>Goto IMDB</p> */}
             </div>
             <div className="ms-4 mb-4">
                 {

@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieDetails from './components/MovieDetails/MovieDetails';
@@ -47,6 +49,9 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
+              <Route path='/discover'>
+                <Home />
+              </Route>
 
             <Route path='/movie/:id'>
               <MovieDetails />

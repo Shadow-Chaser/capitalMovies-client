@@ -104,11 +104,11 @@ const Login = () => {
             <div className="col-md-6 shadow-sm rounded-3 border p-5 register_div">
                 <Heading className='mb-3' as="h1" size="xl" isTruncated> Create Your Account! </Heading>
                 <FormControl id="name" isRequired>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel> <i class="bi bi-type" /> Name</FormLabel>
                     <Input onChange={handleInputValidation} size="lg" name='displayName' type="text" placeholder="Enter your Name" />
                 </FormControl>
                 <FormControl id="email" isRequired>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel> <i class="bi bi-envelope-fill" /> Email</FormLabel>
                     <Input onChange={handleInputValidation} size="lg" name='email' type="email" placeholder="Enter email address" />
                     {
                         inputError?.name === 'email' && <p className='text-danger text-center'>{inputError?.errorMessage}</p>
@@ -116,7 +116,7 @@ const Login = () => {
                 </FormControl>
 
                 <FormControl id="password" isRequired>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel ><i class="bi bi-key-fill" /> Password</FormLabel>
                     <InputGroup size="lg">
                         <Input
                             name='password'
