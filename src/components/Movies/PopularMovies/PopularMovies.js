@@ -7,7 +7,7 @@ const PopularMovies = () => {
     return (
         <div className='d-flex flex-wrap'>
             {
-                movies.popular.map(movie => <MovieCard movie={movie} ></MovieCard>)
+                movies.popular.map(movie => <MovieCard movie={movie}  ></MovieCard>)
             }
         </div>
     );

@@ -1,0 +1,43 @@
+    
+.card-img{
+    width: 300px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.card{
+    margin: 20px;
+    width: 300px;
+    /* height: 430px; */
+}
+
+/* .heart-icon{
+    margin: 20px;
+    font-size: 27px;
+    cursor: pointer;
+} */
+
+.card-title{
+    font-size: 20px;
+    margin:15px 0px 7px 10px;
+    font-weight: 700;
+    /* word-wrap: break-word; */
+}
+
+.card-text{
+    /* word-wrap: break-word; */
+    margin:7px 0px 15px 10px;
+
+
+}
+
+@media(max-width:668px){
+    .card{
+        margin: 20px;
+        width: 300px;
+    }
+    .card-img{
+        width: 300px;
+        height: 200px;
+    }
+}

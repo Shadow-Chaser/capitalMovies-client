@@ -1,11 +1,9 @@
 import React from 'react';
-
+import './Banner.css'
 const Banner = () => {
     return (
-        <div >
-            <h1 style={{ fontSize: "200px" }}>
-                Banner
-            </h1>
+        <div className='banner_div'>
+
         </div>
     );
 };

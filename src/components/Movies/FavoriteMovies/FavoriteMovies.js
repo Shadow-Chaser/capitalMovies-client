@@ -1,10 +1,36 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../../App';
+import FavMovieCard from '../../FavMovieCard/FavMovieCard';
 
 const FavoriteMovies = () => {
+    const [favMovies, setFavMovies] = useState();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+
+    axios.get(`http://localhost:5000/favorites?email=${loggedInUser.email}`)
+        .then(res => {
+            setFavMovies(res.data)
+        })
+        .catch(err => console.log(err))
+
     return (
-        <div>
-            <img src="https://i.ibb.co/NSFmbP9/man.jpg" alt="" srcSet="" />
-        </div>
+        <>
+            {
+
+                loggedInUser.email ?
+
+                    <div className='d-flex flex-wrap'>
+                        {
+                            favMovies?.map(movie => <FavMovieCard movie={movie.movieDetail}  ></FavMovieCard>)
+                        }
+                    </div>
+
+
+                    :
+                    <h1>Please Login to watch Favorites</h1>
+            }
+        </>
     );
 };
 
