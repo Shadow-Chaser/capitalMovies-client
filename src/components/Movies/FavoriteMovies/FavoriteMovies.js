@@ -20,7 +20,7 @@ const FavoriteMovies = () => {
 
                 loggedInUser.email ?
 
-                    <div className='d-flex flex-wrap'>
+                    <div className='d-flex flex-wrap justify-content-center'>
                         {
                             favMovies?.map(movie => <FavMovieCard movie={movie.movieDetail}  ></FavMovieCard>)
                         }
@@ -28,7 +28,7 @@ const FavoriteMovies = () => {
 
 
                     :
-                    <h1>Please Login to watch Favorites</h1>
+                    <h1 style={{ fontSize: '30px', fontWeight: 'bold' }} >Please Login to watch Favorites</h1>
             }
         </>
     );

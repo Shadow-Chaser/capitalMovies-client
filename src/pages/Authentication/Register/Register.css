@@ -3,3 +3,12 @@
     width: 40%;
     
 }
+
+
+@media (max-width:668px) {
+    .register_div{
+        width: 100%;
+        
+    }
+    
+}

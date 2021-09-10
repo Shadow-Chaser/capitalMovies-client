@@ -10,16 +10,12 @@ const TabContainer = () => {
     return (
         <Tabs isFitted variant="enclosed" colorScheme="green">
             <TabList>
-                {/* <Tab>Discover</Tab> */}
-                <Tab>Popular</Tab>
-                <Tab>Latest</Tab>
-                <Tab>Favorites</Tab>
+                <Tab _selected={{ color: "white", bg: "#008080", fontWeight: 'bolder' }}>Popular</Tab>
+                <Tab _selected={{ color: "white", bg: "#008080", fontWeight: 'bolder' }}>Latest</Tab>
+                <Tab _selected={{ color: "white", bg: "#008080", fontWeight: 'bolder' }}>Favorites</Tab>
             </TabList>
             <TabPanels>
-                {/* <TabPanel>
-                    <DiscoverMovies />
-                </TabPanel> */}
-                <TabPanel>
+                <TabPanel >
                     <PopularMovies />
                 </TabPanel>
                 <TabPanel>

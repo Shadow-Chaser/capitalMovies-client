@@ -9,7 +9,8 @@ import {
     Input,
     InputRightElement,
     Button,
-    Heading
+    Heading,
+    useToast
 } from "@chakra-ui/react"
 import Navigation from "../../../components/Navigation/Navigation"
 import './Login.css'
@@ -25,6 +26,7 @@ if (!firebase.apps.length) {
     firebase.app();
 }
 const Login = () => {
+    const toast = useToast()
     const [show, setShow] = useState(false)
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [loginInfo, setLoginInfo] = useState({});
@@ -44,15 +46,24 @@ const Login = () => {
     const handleSignIn = () => {
         firebase.auth().signInWithEmailAndPassword(loginInfo.email, loginInfo.password)
             .then((userCredential) => {
+                toast({
+                    title: `You have been logged-in successfully! `,
+                    status: "success",
+                    position: "bottom",
+                    isClosable: true,
+                })
                 var user = userCredential.user;
                 // console.log(user.displayName)
                 setLoggedInUser({ "email": user.email, "name": user.displayName })
                 history.push(from);
             })
             .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorMessage);
+                toast({
+                    title: `${error.message}`,
+                    status: "error",
+                    position: "top",
+                    isClosable: true,
+                })
             });
     }
 
@@ -60,7 +71,7 @@ const Login = () => {
         <>
             <Navigation />
         <div className='row '>
-            <div className="col-md-6 shadow-sm rounded-3 border p-5 login_div">
+                <div className="col-md-6 col-sm-12 shadow-sm rounded-3 border p-5 login_div">
                 <Heading className='mb-3' as="h1" size="xl" isTruncated> Enter Your Credential </Heading>
                 <FormControl id="email" isRequired>
                         <FormLabel> <i class="bi bi-envelope-fill" /> Email</FormLabel>
@@ -92,7 +103,7 @@ const Login = () => {
                 </p>
             </div>
 
-            <div className="col-md-6">
+                <div className="col-md-6 col-sm-12">
                     <img src={login} alt="" srcSet="" />
             </div>
         </div>

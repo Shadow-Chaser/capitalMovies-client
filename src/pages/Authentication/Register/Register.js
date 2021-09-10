@@ -9,7 +9,8 @@ import {
     Input,
     InputRightElement,
     Button,
-    Heading
+    Heading,
+    useToast
 } from "@chakra-ui/react"
 import './Register.css'
 import { Link, useHistory } from 'react-router-dom';
@@ -17,6 +18,7 @@ import { emailRegex, passRegex } from '../RegEx'
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import firebaseConfig from "../firebase.config";
+import Navigation from '../../../components/Navigation/Navigation'
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -25,6 +27,7 @@ if (!firebase.apps.length) {
 }
 
 const Login = () => {
+    const toast = useToast();
     const history = useHistory();
     const [show, setShow] = useState(false)
     const [regInfo, setRegInfo] = useState({})
@@ -74,7 +77,13 @@ const Login = () => {
             firebase.auth()
                 .createUserWithEmailAndPassword(regInfo.email, regInfo.password)
                 .then((userCredential) => {
-                    console.log(userCredential);
+                    toast({
+                        title: `You have been registered successfully! `,
+                        status: "success",
+                        position: "bottom",
+                        isClosable: true,
+                    })
+
                     const user = userCredential.user;
                     user.updateProfile(
                         {
@@ -85,17 +94,27 @@ const Login = () => {
 
                 })
                 .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // ..
+                    toast({
+                        title: `${error.message}`,
+                        status: "error",
+                        position: "top",
+                        isClosable: true,
+                    })
                 });
         } else {
-            alert("information invalid");
+            toast({
+                title: `Invalid Information!`,
+                status: "error",
+                position: "top",
+                isClosable: true,
+            })
         }
     };
 
 
     return (
+        <>
+            <Navigation />
         <div className='row '>
             <div className="col-md-6">
                 <img src={login} alt="" srcSet="" />
@@ -143,6 +162,7 @@ const Login = () => {
                 </p>
             </div>
         </div>
+        </>
     );
 };
 

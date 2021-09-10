@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import { UserContext, MovieContext } from '../../App';
 import axios from 'axios';
 import './MovieCard.css'
-const baseURL = "https://image.tmdb.org/t/p/w500"
+const baseURL = "https://image.tmdb.org/t/p/original"
 
 const MovieCard = (props) => {
     const toast = useToast()

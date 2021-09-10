@@ -12,3 +12,40 @@
     margin-bottom: 100px;
   }
 
+  .overview{
+    color: white;
+    font-weight: 800;
+  }
+
+  .banner_title{
+    font-size:90px;
+    font-weight: bolder;
+  }
+
+  .release_date{
+    margin:'20px 0 20px 0';
+    padding:'5px 10px';
+  }
+
+  @media (max-width:668px) {
+ 
+    .overview{
+      color: white;
+      font-weight: 100;
+      font-size: 10px;
+
+    }
+
+    .banner_title{
+      font-size: 20px;
+    }
+
+    .bottom_left {
+      position: absolute;
+      top: 24%;
+      left: 37%;
+      transform: translate( -50%, -50% );
+      /* text-align: center; */
+      color: white;
+    }
+}

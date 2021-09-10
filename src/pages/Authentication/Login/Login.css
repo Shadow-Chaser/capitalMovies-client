@@ -3,3 +3,11 @@
     width: 40%;
     
 }
+
+@media (max-width:668px) {
+    .login_div{
+        width: 100%;
+        
+    }
+    
+}

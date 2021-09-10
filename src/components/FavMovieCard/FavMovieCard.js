@@ -3,7 +3,7 @@ import { Tooltip } from "@chakra-ui/react"
 import React from 'react';
 import { useHistory } from 'react-router';
 import './FavMovieCard.css'
-const baseURL = "https://image.tmdb.org/t/p/w500"
+const baseURL = "https://image.tmdb.org/t/p/original"
 
 const FavMovieCard = (props) => {
     const { id, title, poster_path, vote_average } = props.movie;

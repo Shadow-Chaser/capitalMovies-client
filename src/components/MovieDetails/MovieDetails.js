@@ -5,7 +5,7 @@ import './MovieDetails.css'
 import { Tooltip } from '@chakra-ui/tooltip';
 import { Badge, Link } from '@chakra-ui/layout';
 import Navigation from '../Navigation/Navigation';
-const baseURL = "https://image.tmdb.org/t/p/w500"
+const baseURL = "https://image.tmdb.org/t/p/original"
 
 
 const MovieDetails = () => {

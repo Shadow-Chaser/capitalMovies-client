@@ -5,7 +5,7 @@ import MovieCard from '../../MovieCard/MovieCard';
 const PopularMovies = () => {
     const [movies, setMovies] = useContext(MovieContext)
     return (
-        <div className='d-flex flex-wrap'>
+        <div className='d-flex flex-wrap justify-content-center'>
             {
                 movies.latest.map(movie => <MovieCard movie={movie} ></MovieCard>)
             }
